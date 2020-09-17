@@ -12,7 +12,7 @@ class Questionnaire extends Model
     /**
      * @return HasMany
      */
-    public function questionnaire(): HasMany
+    public function questions(): HasMany
     {
         return $this->has(Questionnaire::class);
     }
