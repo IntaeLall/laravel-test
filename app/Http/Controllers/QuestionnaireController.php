@@ -13,6 +13,12 @@ class QuestionnaireController extends Controller
      * @param Questionnaire $$questionnaire
      * @return ApiResource
      */
+    public function index()
+    {
+        $questionnaires = Questionnaire::paginate(10);
+        return QuestionnaireResource::collection($questionnaires);
+    }
+
     public function show(Questionnaire $questionnaire): QuestionnaireResource
     {
         return new QuestionnaireResource($questionnaire->loadMissing('questions'));
