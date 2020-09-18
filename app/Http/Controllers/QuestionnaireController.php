@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Questionnaire;
+use App\Http\Resources\QuestionnaireResource;
 
 class QuestionnaireController extends Controller
 {
-    public function single(Questionnaire $questionnaire)
+    /**
+     * Display the specified resource.
+     *
+     * @param Questionnaire $$questionnaire
+     * @return ApiResource
+     */
+    public function show(Questionnaire $questionnaire): QuestionnaireResource
     {
-        // $questionnaire contains our questionnaire object.
+        return new QuestionnaireResource($questionnaire->loadMissing('questions'));
     }
 }

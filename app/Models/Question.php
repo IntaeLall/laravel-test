@@ -13,6 +13,6 @@ class Question extends Model
      */
     public function questionnaire(): BelongsTo
     {
-        return $this->has(Questionnaire::class);
+        return $this->belongsTo(Questionnaire::class);
     }
 }

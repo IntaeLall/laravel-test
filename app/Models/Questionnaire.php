@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Question;
 
 class Questionnaire extends Model
 {
@@ -14,6 +16,6 @@ class Questionnaire extends Model
      */
     public function questions(): HasMany
     {
-        return $this->has(Questionnaire::class);
+        return $this->hasMany(Question::class)->orderBy('order_key');
     }
 }
