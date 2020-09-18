@@ -11,6 +11,10 @@ class Questionnaire extends Model
 {
     protected $fillable = ['name'];
 
+    public function getRouteKeyName() {
+        return 'slug';
+    }
+
     /**
      * @return HasMany
      */

@@ -13,8 +13,9 @@ class AddSlugToQuestionnaireTable extends Migration
      */
     public function up()
     {
-        Schema::table('questionnaire', function (Blueprint $table) {
-            $table->index('slug');
+        Schema::table('questionnaires', function (Blueprint $table) {
+            $table->string('slug');
+            $table->index(['slug']);
         });
     }
 
@@ -26,7 +27,8 @@ class AddSlugToQuestionnaireTable extends Migration
     public function down()
     {
         Schema::table('questionnaire', function (Blueprint $table) {
-            //
+            $table->dropColumn('slug');
+            $table->dropIndex('slug');
         });
     }
 }
