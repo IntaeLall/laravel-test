@@ -11,7 +11,7 @@ class QuestionnaireController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Questionnaire $$questionnaire
+     * @param Questionnaire $questionnaire
      * @return ResourceCollection
      */
     public function index(): ResourceCollection
@@ -23,7 +23,7 @@ class QuestionnaireController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Questionnaire $$questionnaire
+     * @param Questionnaire $questionnaire
      * @return QuestionnaireResource
      */
     public function show(Questionnaire $questionnaire): QuestionnaireResource
